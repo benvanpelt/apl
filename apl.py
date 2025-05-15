@@ -19,15 +19,15 @@ def get_data():
         headers = {
         "apikey": SUPABASE_KEY,
         "Authorization": f"Bearer {SUPABASE_KEY}"
-    }
-    url = f"{SUPABASE_URL}/rest/v1/apl_drops"
-
-    try:
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        return jsonify(response.json())
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+            }
+        url = f"{SUPABASE_URL}/rest/v1/apl_drops"
+        
+        try:
+                response = requests.get(url, headers=headers)
+                response.raise_for_status()
+                return jsonify(response.json())
+        except Exception as e:
+                return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run (debug=True, host = "0.0.0.0", port = 5000)
