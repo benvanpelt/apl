@@ -1,0 +1,12 @@
+
+services:
+  - type: web
+    name: flask-api
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn main:app
+    envVars:
+      - key: SUPABASE_URL
+        value: your-supabase-url
+      - key: SUPABASE_KEY
+        value: your-supabase-key
