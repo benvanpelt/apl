@@ -20,7 +20,7 @@ def get_data():
     response = supabase.table("apl_drops").select("*").execute()
     return jsonify(response.data)
 
-if __name__ == "__apl__":
+if __name__ == "__main__":
     app.run (debug=True, host = "0.0.0.0", port = 5000)
 
 
